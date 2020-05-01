@@ -1,23 +1,19 @@
 export enum Rank {
-    UR,
-    MR,
-    SR,
-    R,
-    N
+    UR = "UR",
+    MR = "MR",
+    SR = "SR",
+    R = "R",
+    N = "N"
 }
 
-type Unit = {
+export type Unit = {
     key: string,
     name: string,
     rank: Rank,
     imageUrl: string
 }
 
-type UnitMap = {
-    [key: string]: Unit
-}
-
-export const ordinaryUnitMap: UnitMap = {
+export const ordinaryUnitMap = {
     MEDIENA: {
         key: "MEDIENA",
         name: "메디에나",
@@ -278,7 +274,7 @@ export const ordinaryUnitMap: UnitMap = {
     }
 };
 
-export const limitUnitMap: UnitMap = {
+export const limitUnitMap = {
     THANCRED: {
         key: "THANCRED",
         name: "산크레트",

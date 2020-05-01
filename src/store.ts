@@ -5,14 +5,12 @@ import {
 } from "@reduxjs/toolkit";
 import {Banner} from "./data/banners";
 
-const initialState = {
-    banners: [],
-    selectedBanner: null
-};
-
 const bannerSlice = createSlice({
     name: "banner",
-    initialState,
+    initialState: {
+        banners: [],
+        selectedBanner: null
+    },
     reducers: {
         loadBanners: (state: any, action: PayloadAction<Banner[]>) => {
             state.banners = action.payload;
@@ -23,6 +21,11 @@ const bannerSlice = createSlice({
     }
 });
 
+export const {loadBanners, setSelectedBanner} = bannerSlice.actions;
+
+export const selectBanners = (state: RootState) => state.banner.banners;
+export const selectSelectedBanner = (state: RootState) => state.banner.selectedBanner;
+
 const store = configureStore({
     reducer: {
         banner: bannerSlice.reducer
@@ -30,10 +33,5 @@ const store = configureStore({
 });
 
 type RootState = ReturnType<typeof store.getState>;
-
-export const {loadBanners, setSelectedBanner} = bannerSlice.actions;
-
-export const selectBanners = (state: RootState) => state.banner.banners;
-export const selectSelectedBanner = (state: RootState) => state.banner.selectedBanner;
 
 export default store;

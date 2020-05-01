@@ -1,11 +1,14 @@
+import {Unit, units} from "./units";
+import _ from "lodash";
+
 export type Banner = {
     key: string,
     name: string,
     image: string,
     startDate: string,
     endDate: string,
-    units: [],
-    pickUpUnits: string[],
+    units: Unit[],
+    pickUpUnits: Unit[],
 }
 
 const banners: Banner[] = [
@@ -15,8 +18,15 @@ const banners: Banner[] = [
         image: "/images/banners/banner1.jpg",
         startDate: "2020-04-01",
         endDate: "2020-04-15",
-        units: [],
-        pickUpUnits: []
+        units: [
+            ..._.values(units.ordinary),
+            units.limit.ORLANDEAU,
+            units.limit.RAMZA
+        ],
+        pickUpUnits: [
+            units.limit.ORLANDEAU,
+            units.limit.RAMZA
+        ]
     },
     {
         key: "SB_0002",

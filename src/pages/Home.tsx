@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import '../styles/common.css';
 import 'antd/dist/antd.css';
 import {Col, Empty, Layout, PageHeader, Row, Space} from 'antd';
@@ -6,7 +6,7 @@ import CenteredBox from "../components/CenteredBox";
 import BannerDetail from "../components/BannerDetail";
 import BannerTableView from "../components/BannerTableView";
 import {useDispatch, useSelector} from "react-redux";
-import {selectBanners, selectSelectedBanner, loadBanners, setSelectedBanner} from "../store";
+import {loadBanners, selectBanners, selectSelectedBanner, setSelectedBanner} from "../store";
 import {Banner, getBanners} from "../data/banners";
 
 function Home() {
@@ -39,13 +39,12 @@ function Home() {
                                              onClickSelect={selectBanner}
                                              style={{height: "80vh"}}/>
                         </Col>
-
                         <Col span={7}>
                             {
                                 selectedBanner
                                     ? <BannerDetail banner={selectedBanner}
-                                                    style={{height: "70vh", background: "white"}}/>
-                                    : <CenteredBox style={{height: "70vh", background: "white"}}>
+                                                    style={{minHeight: "70vh", maxHeight: "70vh", overflowY: "scroll", background: "white"}}/>
+                                    : <CenteredBox style={{minHeight: "70vh", maxHeight: "70vh", overflowY: "scroll", background: "white"}}>
                                         <Empty image={Empty.PRESENTED_IMAGE_SIMPLE}/>
                                     </CenteredBox>
                             }
