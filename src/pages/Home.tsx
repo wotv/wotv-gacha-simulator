@@ -1,33 +1,26 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/common.css';
 import 'antd/dist/antd.css';
-import {PageHeader, Row, Col, Layout, Table, Space, Empty, Button, Card} from 'antd';
-import BANNERS, {Banner} from "./data/banners";
-import CenteredBox from "./components/CenteredBox";
-import BannerDetail from "./components/BannerDetail";
-import BannerTableView from "./components/BannerTableView";
-
-const getColumns = (setSelectedBanner: Function) => [
-    {
-        title: "배너 이미지",
-        dataIndex: "image",
-        key: "image",
-        render: (text: string, banner: Banner) =>
-            <Layout style={{background: "inherits"}}>
-                <img src={process.env.PUBLIC_URL + banner.image} alt={banner.name}/>
-                <span>{banner.name}</span>
-            </Layout>
-    },
-    {
-        title: "선택",
-        dataIndex: "",
-        render: (banner: Banner) =>
-            <Button type="primary" onClick={() => setSelectedBanner(banner)}>선택</Button>
-    }
-];
+import {Col, Empty, Layout, PageHeader, Row, Space} from 'antd';
+import CenteredBox from "../components/CenteredBox";
+import BannerDetail from "../components/BannerDetail";
+import BannerTableView from "../components/BannerTableView";
+import {useDispatch, useSelector} from "react-redux";
+import {selectBanners, selectSelectedBanner, loadBanners, setSelectedBanner} from "../store";
+import {Banner, getBanners} from "../data/banners";
 
 function Home() {
-    const [selectedBanner, setSelectedBanner] = useState<Banner>();
+    const dispatch = useDispatch();
+    const banners = useSelector(selectBanners);
+    const selectedBanner = useSelector(selectSelectedBanner);
+
+    useEffect(() => {
+        dispatch(loadBanners(getBanners()));
+    }, [dispatch]);
+
+    const selectBanner = (banner: Banner | null) => {
+        dispatch(setSelectedBanner(banner));
+    };
 
     return (
         <Layout className="page-wrapper">
@@ -40,7 +33,11 @@ function Home() {
                 <Layout>
                     <Row gutter={[24, 0]}>
                         <Col span={17}>
-                            <BannerTableView banners={BANNERS} cols={4} style={{height: "80vh"}}/>
+                            <BannerTableView banners={banners}
+                                             selectedBanner={selectedBanner}
+                                             cols={4}
+                                             onClickSelect={selectBanner}
+                                             style={{height: "80vh"}}/>
                         </Col>
 
                         <Col span={7}>

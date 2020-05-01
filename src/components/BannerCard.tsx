@@ -1,19 +1,22 @@
 import React from 'react';
 import {Card} from "antd";
 import {Banner} from "../data/banners";
-import {CheckOutlined} from "@ant-design/icons/lib";
+import {CheckOutlined, CheckCircleTwoTone} from "@ant-design/icons/lib";
 
 interface BannerProps {
     banner: Banner;
-    onClick: Function;
+    selected?: boolean;
+    onBannerClick: (banner: Banner | null) => void;
 }
 
-const BannerCard: React.FC<BannerProps & React.HTMLAttributes<HTMLElement>> = ({banner, onClick}) => (
+const BannerCard: React.FC<BannerProps & React.HTMLAttributes<HTMLElement>> = ({banner, selected, onBannerClick}) => (
     <Card
         cover={<img src={process.env.PUBLIC_URL + banner.image} alt={banner.name}/>}
         title={banner.name}
         actions={[
-            <CheckOutlined key="setting" onClick={(e) => alert(JSON.stringify(banner))}/>,
+            selected
+                ? <CheckCircleTwoTone twoToneColor="#52c41a" onClick={() => onBannerClick(null)}/>
+                : <CheckOutlined key="setting" onClick={() => onBannerClick(banner)}/>
         ]}>
         소환 기간: {banner.startDate} ~ {banner.endDate}
     </Card>
