@@ -22,7 +22,7 @@ const BannerTableView: React.FC<BannerTableViewProps & React.HTMLAttributes<HTML
     <Layout {...attributes} style={{overflowY: "scroll", overflowX: "hidden"}}>
         <Row gutter={gutter}>
             {banners.map(banner =>
-                <Col span={24 / cols!}>
+                <Col span={24 / cols!} key={banner.key}>
                     <BannerCard banner={banner}
                                 selected={banner.key === selectedBanner?.key}
                                 onBannerClick={onClickSelect}/>

@@ -18,7 +18,7 @@ const BannerCard: React.FC<BannerProps & React.HTMLAttributes<HTMLElement>> = ({
                 ? <CheckCircleTwoTone twoToneColor="#52c41a" onClick={() => onBannerClick(null)}/>
                 : <CheckOutlined key="setting" onClick={() => onBannerClick(banner)}/>
         ]}>
-        소환 기간: {banner.startDate} ~ {banner.endDate}
+        소환 기간: <br/>{banner.startDate} ~ {banner.endDate}
     </Card>
 );
 
