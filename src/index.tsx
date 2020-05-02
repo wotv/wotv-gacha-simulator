@@ -7,15 +7,14 @@ import * as serviceWorker from './serviceWorker';
 import store from "./store";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <BrowserRouter>
-                <Switch>
-                    <Route path={process.env.PUBLIC_URL + "/"} exact component={Home}/>
-                </Switch>
-            </BrowserRouter>
-        </Provider>
-    </React.StrictMode>,
+    <Provider store={store}>
+        <BrowserRouter>
+            <Switch>
+                <Route path={process.env.PUBLIC_URL + "/"} exact component={Home}/>
+            </Switch>
+        </BrowserRouter>
+    </Provider>
+    ,
     document.getElementById('root')
 );
 
