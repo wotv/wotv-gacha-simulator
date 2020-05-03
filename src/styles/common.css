@@ -25,7 +25,11 @@
     }
 
     #root > section > div {
-        margin-bottom: 100px;
+        margin-bottom: 0;
+    }
+
+    #root > section {
+        height: 100vh;
     }
 }
 
