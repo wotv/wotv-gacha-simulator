@@ -1,0 +1,1 @@
+{"version":3,"sources":["common.css"],"names":[],"mappings":"AAAA,cACI,YAAa,CACb,wBAAyB,CACzB,YACJ","file":"main.72323b8c.chunk.css","sourcesContent":[".page-wrapper {\r\n    height: 100vh;\r\n    background-color: #efefef;\r\n    padding: 24px;\r\n}\r\n"]}
