@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wotv-gacha-simulator/static/css/main.bde66278.chunk.css",
+    "main.css": "/wotv-gacha-simulator/static/css/main.3a51f4c5.chunk.css",
     "main.js": "/wotv-gacha-simulator/static/js/main.968bcc99.chunk.js",
     "main.js.map": "/wotv-gacha-simulator/static/js/main.968bcc99.chunk.js.map",
     "runtime-main.js": "/wotv-gacha-simulator/static/js/runtime-main.c17f3697.js",
@@ -9,17 +9,17 @@
     "static/js/2.299d9ec3.chunk.js": "/wotv-gacha-simulator/static/js/2.299d9ec3.chunk.js",
     "static/js/2.299d9ec3.chunk.js.map": "/wotv-gacha-simulator/static/js/2.299d9ec3.chunk.js.map",
     "index.html": "/wotv-gacha-simulator/index.html",
-    "precache-manifest.3c0f532b114654d5857382b17230a6f2.js": "/wotv-gacha-simulator/precache-manifest.3c0f532b114654d5857382b17230a6f2.js",
+    "precache-manifest.9e7e6c9bd4f982630e17b2a19dd06d5d.js": "/wotv-gacha-simulator/precache-manifest.9e7e6c9bd4f982630e17b2a19dd06d5d.js",
     "service-worker.js": "/wotv-gacha-simulator/service-worker.js",
     "static/css/2.35fcc229.chunk.css.map": "/wotv-gacha-simulator/static/css/2.35fcc229.chunk.css.map",
-    "static/css/main.bde66278.chunk.css.map": "/wotv-gacha-simulator/static/css/main.bde66278.chunk.css.map",
+    "static/css/main.3a51f4c5.chunk.css.map": "/wotv-gacha-simulator/static/css/main.3a51f4c5.chunk.css.map",
     "static/js/2.299d9ec3.chunk.js.LICENSE.txt": "/wotv-gacha-simulator/static/js/2.299d9ec3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c17f3697.js",
     "static/css/2.35fcc229.chunk.css",
     "static/js/2.299d9ec3.chunk.js",
-    "static/css/main.bde66278.chunk.css",
+    "static/css/main.3a51f4c5.chunk.css",
     "static/js/main.968bcc99.chunk.js"
   ]
 }
