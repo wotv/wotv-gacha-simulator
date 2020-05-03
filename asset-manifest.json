@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/wotv-gacha-simulator/static/css/main.72323b8c.chunk.css",
-    "main.js": "/wotv-gacha-simulator/static/js/main.ac8f942e.chunk.js",
-    "main.js.map": "/wotv-gacha-simulator/static/js/main.ac8f942e.chunk.js.map",
+    "main.css": "/wotv-gacha-simulator/static/css/main.37380852.chunk.css",
+    "main.js": "/wotv-gacha-simulator/static/js/main.7e8776f0.chunk.js",
+    "main.js.map": "/wotv-gacha-simulator/static/js/main.7e8776f0.chunk.js.map",
     "runtime-main.js": "/wotv-gacha-simulator/static/js/runtime-main.c17f3697.js",
     "runtime-main.js.map": "/wotv-gacha-simulator/static/js/runtime-main.c17f3697.js.map",
     "static/css/2.35fcc229.chunk.css": "/wotv-gacha-simulator/static/css/2.35fcc229.chunk.css",
     "static/js/2.299d9ec3.chunk.js": "/wotv-gacha-simulator/static/js/2.299d9ec3.chunk.js",
     "static/js/2.299d9ec3.chunk.js.map": "/wotv-gacha-simulator/static/js/2.299d9ec3.chunk.js.map",
     "index.html": "/wotv-gacha-simulator/index.html",
-    "precache-manifest.caabec1c2153a4fa1e921f5efd226fb8.js": "/wotv-gacha-simulator/precache-manifest.caabec1c2153a4fa1e921f5efd226fb8.js",
+    "precache-manifest.4abc37bb44841d6a166059ed29c8d541.js": "/wotv-gacha-simulator/precache-manifest.4abc37bb44841d6a166059ed29c8d541.js",
     "service-worker.js": "/wotv-gacha-simulator/service-worker.js",
     "static/css/2.35fcc229.chunk.css.map": "/wotv-gacha-simulator/static/css/2.35fcc229.chunk.css.map",
-    "static/css/main.72323b8c.chunk.css.map": "/wotv-gacha-simulator/static/css/main.72323b8c.chunk.css.map",
+    "static/css/main.37380852.chunk.css.map": "/wotv-gacha-simulator/static/css/main.37380852.chunk.css.map",
     "static/js/2.299d9ec3.chunk.js.LICENSE.txt": "/wotv-gacha-simulator/static/js/2.299d9ec3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c17f3697.js",
     "static/css/2.35fcc229.chunk.css",
     "static/js/2.299d9ec3.chunk.js",
-    "static/css/main.72323b8c.chunk.css",
-    "static/js/main.ac8f942e.chunk.js"
+    "static/css/main.37380852.chunk.css",
+    "static/js/main.7e8776f0.chunk.js"
   ]
 }

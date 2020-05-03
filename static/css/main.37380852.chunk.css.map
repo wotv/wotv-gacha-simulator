@@ -1,0 +1,1 @@
+{"version":3,"sources":["common.css"],"names":[],"mappings":"AAAA,EACI,yBACJ,CAEA,cACI,YAAa,CACb,wBAAyB,CACzB,YACJ","file":"main.37380852.chunk.css","sourcesContent":["* {\r\n    touch-action: manipulation;\r\n}\r\n\r\n.page-wrapper {\r\n    height: 100vh;\r\n    background-color: #efefef;\r\n    padding: 24px;\r\n}\r\n"]}
