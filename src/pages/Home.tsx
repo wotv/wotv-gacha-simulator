@@ -35,6 +35,10 @@ function Home() {
 
     const selectBanner = (banner: Banner | null) => {
         dispatch(setSelectedBanner(banner));
+
+        if (banner) {
+            document.querySelector("#bannerDetail")?.scrollIntoView({behavior: "smooth"});
+        }
     };
 
     const toggleModal = (show: boolean) => {
@@ -55,32 +59,28 @@ function Home() {
                 />
                 <Layout>
                     <Row gutter={[24, 0]}>
-                        <Col span={17}>
+                        <Col xl={17} xs={24}>
                             <BannerTableView banners={banners}
                                              selectedBanner={selectedBanner}
-                                             cols={4}
                                              onClickSelect={selectBanner}
                                              style={{height: "80vh"}}/>
                         </Col>
-                        <Col span={7}>
+                        <Col xl={7} xs={24}>
+                            <div id="bannerDetail">
                             {
                                 selectedBanner
                                     ? <BannerDetail banner={selectedBanner}
                                                     style={{
-                                                        minHeight: "70vh",
-                                                        maxHeight: "70vh",
-                                                        overflowY: "scroll",
                                                         background: "white"
                                                     }}/>
                                     : <CenteredBox style={{
-                                        minHeight: "70vh",
-                                        maxHeight: "70vh",
                                         overflowY: "scroll",
                                         background: "white"
                                     }}>
                                         <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<span>소환 배너를 선택하세요.</span>}/>
                                     </CenteredBox>
                             }
+                            </div>
                         </Col>
                     </Row>
                 </Layout>

@@ -1,4 +1,4 @@
-import {Button, Collapse, InputNumber, Layout, PageHeader, Space} from "antd";
+import {Button, Collapse, InputNumber, Layout, PageHeader, Space, Row, Col} from "antd";
 import React, {useState} from "react";
 import {Banner} from "../data/banners";
 import {addPulledUnits, setVisible, setSummonInfo} from "../store";
@@ -57,32 +57,42 @@ const BannerDetail: React.FC<BannerDetailProps & React.HTMLAttributes<HTMLElemen
             <>
                 <Collapse bordered={false} defaultActiveKey={"1"} style={{overflowY: "scroll"}}>
                     <Collapse.Panel header="소환" key="1">
+                        <Row gutter={[8, 8]}>
+                            <Col>
+                                <Button type="primary" size="middle" onClick={() => summon(1, 1)}>1회 소환</Button>
+                            </Col>
+                            <Col>
+                                <PopoverButton button={<Button type="primary">1 * N회 소환</Button>}>
+                                    {
+                                        (close: Function) => <Space direction={"horizontal"}>
+                                            <InputNumber min={1} value={repeatCountSummon1} onChange={(n) => setRepeatCountSummon1(n!)} style={{width: "80px"}}/>
+                                            <Button type="primary" onClick={() => {
+                                                summon(1, repeatCountSummon1);
+                                                close();
+                                            }}>반복 소환</Button>
+                                        </Space>
+                                    }
+                                </PopoverButton>
+                            </Col>
+                            <Col>
+                                <Button type="primary" size="middle" onClick={() => summon(10, 1)}>10회 소환</Button>
+                            </Col>
+                            <Col>
+                                <PopoverButton button={<Button type="primary">10 * N회 소환</Button>}>
+                                    {
+                                        (close: Function) => <Space direction={"horizontal"}>
+                                            <InputNumber min={1} value={repeatCountSummon10} onChange={(n) => setRepeatCountSummon10(n!)} style={{width: "80px"}}/>
+                                            <Button type="primary" onClick={() => {
+                                                summon(10, repeatCountSummon10);
+                                                close();
+                                            }}>반복 소환</Button>
+                                        </Space>
+                                    }
+                                </PopoverButton>
+                            </Col>
+                        </Row>
                         <Space direction="horizontal" size={12}>
-                            <Button type="primary" size="middle" onClick={() => summon(1, 1)}>1회 소환</Button>
-                            <PopoverButton button={<Button type="primary">1 * N회 소환</Button>}>
-                                {
-                                    (close: Function) => <Space direction={"horizontal"}>
-                                        <InputNumber min={1} value={repeatCountSummon1} onChange={(n) => setRepeatCountSummon1(n!)} style={{width: "80px"}}/>
-                                        <Button type="primary" onClick={() => {
-                                            summon(1, repeatCountSummon1);
-                                            close();
-                                        }}>반복 소환</Button>
-                                    </Space>
-                                }
-                            </PopoverButton>
 
-                            <Button type="primary" size="middle" onClick={() => summon(10, 1)}>10회 소환</Button>
-                            <PopoverButton button={<Button type="primary">10 * N회 소환</Button>}>
-                                {
-                                    (close: Function) => <Space direction={"horizontal"}>
-                                        <InputNumber min={1} value={repeatCountSummon10} onChange={(n) => setRepeatCountSummon10(n!)} style={{width: "80px"}}/>
-                                        <Button type="primary" onClick={() => {
-                                            summon(10, repeatCountSummon10);
-                                            close();
-                                        }}>반복 소환</Button>
-                                    </Space>
-                                }
-                            </PopoverButton>
                         </Space>
                     </Collapse.Panel>
                     <Collapse.Panel header="유닛" key="2">

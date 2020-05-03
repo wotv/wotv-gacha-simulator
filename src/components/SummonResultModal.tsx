@@ -16,7 +16,7 @@ interface SummonResultModalProps {
 const renderResultList = (units: Unit[], showColor: boolean) => <>
     {
         _.map(units, (unit, index) => (
-            <Col key={index} span={4}>
+            <Col key={index} xs={12} md={6} lg={6} xl={4}>
                 <UnitCard unit={unit} width={120} showBackgroundColor={showColor}/>
             </Col>
         ))

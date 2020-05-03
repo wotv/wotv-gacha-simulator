@@ -1,5 +1,36 @@
+* {
+    touch-action: manipulation;
+}
+
 .page-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #efefef;
     padding: 24px;
+}
+
+#bannerDetail > div {
+    min-height: 80vh;
+    max-height: 80vh;
+}
+
+
+@media(min-width: 1200px) {
+    #bannerTableViewWrap > section {
+        height: 80vh;
+    }
+
+    #bannerDetail > section {
+        min-height: 80vh;
+        max-height: 80vh;
+    }
+
+    #root > section > div {
+        margin-bottom: 100px;
+    }
+}
+
+@media(max-width: 1199px) {
+    #root > section > div {
+        margin-bottom: 250px;
+    }
 }
