@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8e4cb91cb5fc249a6231091b976af134",
+    "revision": "9e037402af6091e0d5d14b6e936c4910",
     "url": "/wotv-gacha-simulator/index.html"
   },
   {
