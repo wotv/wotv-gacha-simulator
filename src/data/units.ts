@@ -80,6 +80,18 @@ const ordinaryUnitMap = {
         rank: Rank.UR,
         imageUrl: "/images/units/yerma.jpg"
     },
+    SASAYAKI: {
+        key: "SASAYAKI",
+        name: "속삭임",
+        rank: Rank.UR,
+        imageUrl: "/images/units/sasayaki.jpg"
+    },
+    KITONE: {
+        key: "KITONE",
+        name: "키튼",
+        rank: Rank.UR,
+        imageUrl: "/images/units/kitone.jpg"
+    },
     HELENA_LEONIS: {
         key: "HELENA_LEONIS",
         name: "헬레나 레오니스",
