@@ -4,27 +4,20 @@ import {Col, Divider, Modal, Row, Space} from "antd";
 import {Checkbox} from "antd/es";
 import _ from "lodash";
 import UnitCard from "./UnitCard";
+import SummonResultList from "./SummonResultList";
+import SummonResultListMerged from "./SummonResultListMerged";
 
 interface SummonResultModalProps {
     units: Unit[];
     visible: boolean;
     handleClose: () => void;
-    showDivider?: boolean;
-    dividerSize?: number;
+    showDivider: boolean;
+    dividerSize: number;
 }
-
-const renderResultList = (units: Unit[], showColor: boolean) => <>
-    {
-        _.map(units, (unit, index) => (
-            <Col key={index} xs={12} md={6} lg={6} xl={4}>
-                <UnitCard unit={unit} width={120} showBackgroundColor={showColor}/>
-            </Col>
-        ))
-    }
-</>;
 
 const SummonResultModal: React.FC<SummonResultModalProps & React.HTMLAttributes<HTMLElement>> = ({units, visible, handleClose, showDivider, dividerSize}) => {
     const [showColor, toggleShowColor] = useState(true);
+    const [mergingSameUnit, toggleMergingSameUnit] = useState(true);
 
     return (
         <Modal title="소환 결과"
@@ -37,18 +30,18 @@ const SummonResultModal: React.FC<SummonResultModalProps & React.HTMLAttributes<
             <Space direction="vertical" size={8}>
                 <div>
                     <Checkbox checked={showColor} onChange={e => toggleShowColor(e.target.checked)}>등급별 색상표시</Checkbox>
+                    <Checkbox checked={mergingSameUnit} onChange={e => toggleMergingSameUnit(e.target.checked)}>같은 유닛 모아보기</Checkbox>
                 </div>
                 <Row gutter={[4, 16]}>
                     {
-                        (showDivider && dividerSize)
-                            ? _.chunk(units, dividerSize)
-                                .map((subList, index) => <div key={index}>
-                                    <Divider>{index * dividerSize + 1} ~ {index * dividerSize + subList.length} 번째</Divider>
-                                    <Row gutter={[4, 16]}>
-                                        {renderResultList(subList, showColor)}
-                                    </Row>
-                                </div>)
-                            : renderResultList(units, showColor)
+                        mergingSameUnit
+                            ? <SummonResultListMerged units={units}
+                                                      showColor={showColor}/>
+                            : <SummonResultList units={units}
+                                                showColor={showColor}
+                                                showDivider={showDivider}
+                                                dividerSize={dividerSize}/>
+
                     }
                 </Row>
             </Space>

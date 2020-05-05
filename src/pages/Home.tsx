@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../styles/common.css';
 import 'antd/dist/antd.css';
-import {Badge, Button, Col, Empty, Layout, PageHeader, Row, Space} from 'antd';
+import {BackTop, Badge, Button, Col, Empty, Layout, PageHeader, Row, Space} from 'antd';
 import CenteredBox from "../components/CenteredBox";
 import BannerDetail from "../components/BannerDetail";
 import BannerTableView from "../components/BannerTableView";
@@ -73,7 +73,7 @@ function Home() {
                     title="WOTV 소환 시뮬레이터"
                     ghost={false}
                     extra={[
-                        <Badge {...(hasNewNotices ? { dot: true } : {})}>
+                        <Badge key={hasNewNotices.toString()} {...(hasNewNotices ? { dot: true } : {})}>
                             <Button onClick={() => toggleNoticeOpened(true)}>공지</Button>
                         </Badge>
                     ]}
@@ -106,6 +106,7 @@ function Home() {
                     </Row>
                 </Layout>
             </Space>
+            <BackTop style={{marginBottom: 30}}/>
             <NoticeDrawer list={notices}
                           visible={noticeOpened}
                           handleClose={handleCloseNotice}/>

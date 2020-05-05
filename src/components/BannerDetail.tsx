@@ -28,8 +28,8 @@ const BannerDetail: React.FC<BannerDetailProps & React.HTMLAttributes<HTMLElemen
             return alert("1 이상의 정수만 입력하세요.");
         }
 
-        if (unitCount * times > 1000) {
-            return alert("한 번에 뽑을 수 있는 유닛은 1000개까지 입니다.");
+        if (unitCount * times > 300) {
+            return alert("한 번에 뽑을 수 있는 유닛은 300개까지 입니다.");
         }
 
         dispatch(setSummonInfo({unitCount, times}));
