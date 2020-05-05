@@ -27,11 +27,10 @@ const SummonResultListMerged: React.FC<SummonResultListMergedProps & React.HTMLA
                 fp.map(([key, units]) =>
                     (
                         <Col key={key} xs={12} md={6} lg={6} xl={4}>
-                            <Badge overflowCount={1000} count={units.length} style={{ backgroundColor: "#52c41a" }}>
-                                <UnitCard unit={units[0]}
-                                          width={120}
-                                          showBackgroundColor={showColor}/>
-                            </Badge>
+                            <UnitCard unit={units[0]}
+                                      count={units.length}
+                                      width={120}
+                                      showBackgroundColor={showColor}/>
                         </Col>
                     ))
             )(units)

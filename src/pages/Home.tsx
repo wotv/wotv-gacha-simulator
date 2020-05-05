@@ -10,16 +10,16 @@ import {
     clearPulledUnits,
     loadBanners,
     loadNotices,
-    updateLastReadNoticeId,
     selectBanners,
+    selectHasNewNotices,
     selectModalVisible,
     selectNotices,
-    selectHasNewNotices,
     selectPulledUnits,
     selectSelectedBanner,
     selectSummonInfo,
     setSelectedBanner,
-    setVisible
+    setVisible,
+    updateLastReadNoticeId
 } from "../store";
 import {Banner, getBanners} from "../data/banners";
 import SummonResultModal from "../components/SummonResultModal";
