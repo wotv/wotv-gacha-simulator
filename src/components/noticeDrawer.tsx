@@ -19,7 +19,7 @@ const NoticeDrawer: React.FC<NoticeDrawerProps & React.HTMLAttributes<HTMLElemen
     <Drawer
         title="공지사항"
         placement="right"
-        width={400}
+        width={300}
         visible={visible}
         onClose={handleClose}
         bodyStyle={{padding: 0}}
