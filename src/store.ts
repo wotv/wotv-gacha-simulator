@@ -1,11 +1,39 @@
 import {configureStore, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {Banner} from "./data/banners";
 import {Unit} from "./data/units";
+import {NoticeItem} from "./components/noticeDrawer";
+import _ from "lodash";
 
 type SummonInfo = {
     unitCount: number;
     times: number;
 }
+
+const globalSlice = createSlice({
+    name: "global",
+    initialState: {
+        noticeItems: [] as NoticeItem[],
+        lastReadNoticeId: 0
+    },
+    reducers: {
+        loadNotices: (state: any, action: PayloadAction<NoticeItem[]>) => {
+            state.noticeItems = action.payload;
+            state.lastReadNoticeId = _.toNumber(localStorage.getItem("lastReadNoticeId") || 0);
+        },
+        updateLastReadNoticeId: (state: any) => {
+            const lastReadNoticeId = _.defaultTo(_.maxBy<NoticeItem>(state.noticeItems, "id")?.id, 0);
+
+            state.lastReadNoticeId = lastReadNoticeId;
+            localStorage.setItem("lastReadNoticeId", lastReadNoticeId.toString());
+        }
+    }
+});
+
+export const {loadNotices, updateLastReadNoticeId} = globalSlice.actions;
+
+export const selectNotices = (state: RootState) => state.global.noticeItems;
+export const selectHasNewNotices = (state: RootState) =>
+    state.global.lastReadNoticeId < _.defaultTo(_.maxBy(state.global.noticeItems, "id")?.id, 0);
 
 const bannerSlice = createSlice({
     name: "banner",
@@ -66,6 +94,7 @@ export const selectModalVisible = (state: RootState) => state.modal.visible;
 
 const store = configureStore({
     reducer: {
+        global: globalSlice.reducer,
         banner: bannerSlice.reducer,
         modal: modalSlice.reducer,
     }

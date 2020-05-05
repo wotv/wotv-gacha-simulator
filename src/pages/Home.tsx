@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../styles/common.css';
 import 'antd/dist/antd.css';
-import {Col, Empty, Layout, PageHeader, Row, Space} from 'antd';
+import {Badge, Button, Col, Empty, Layout, PageHeader, Row, Space} from 'antd';
 import CenteredBox from "../components/CenteredBox";
 import BannerDetail from "../components/BannerDetail";
 import BannerTableView from "../components/BannerTableView";
@@ -9,18 +9,28 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     clearPulledUnits,
     loadBanners,
+    loadNotices,
+    updateLastReadNoticeId,
     selectBanners,
     selectModalVisible,
+    selectNotices,
+    selectHasNewNotices,
     selectPulledUnits,
-    selectSelectedBanner, selectSummonInfo,
+    selectSelectedBanner,
+    selectSummonInfo,
     setSelectedBanner,
     setVisible
 } from "../store";
 import {Banner, getBanners} from "../data/banners";
 import SummonResultModal from "../components/SummonResultModal";
+import NoticeDrawer from "../components/noticeDrawer";
+import {getNoticeItems} from "../data/notices";
 
 function Home() {
+    const [noticeOpened, toggleNoticeOpened] = useState(false);
     const dispatch = useDispatch();
+    const notices = useSelector(selectNotices);
+    const hasNewNotices = useSelector(selectHasNewNotices);
     const banners = useSelector(selectBanners);
     const selectedBanner = useSelector(selectSelectedBanner);
     const modalVisible = useSelector(selectModalVisible);
@@ -31,6 +41,7 @@ function Home() {
 
     useEffect(() => {
         dispatch(loadBanners(getBanners()));
+        dispatch(loadNotices(getNoticeItems().reverse()));
     }, [dispatch]);
 
     const selectBanner = (banner: Banner | null) => {
@@ -45,6 +56,11 @@ function Home() {
         dispatch(setVisible(show));
     };
 
+    const handleCloseNotice = () => {
+        dispatch(updateLastReadNoticeId());
+        toggleNoticeOpened(false);
+    };
+
     const closeModal = () => {
         dispatch(clearPulledUnits());
         toggleModal(false);
@@ -56,6 +72,11 @@ function Home() {
                 <PageHeader
                     title="WOTV 소환 시뮬레이터"
                     ghost={false}
+                    extra={[
+                        <Badge {...(hasNewNotices ? { dot: true } : {})}>
+                            <Button onClick={() => toggleNoticeOpened(true)}>공지</Button>
+                        </Badge>
+                    ]}
                 />
                 <Layout>
                     <Row gutter={[24, 0]}>
@@ -85,6 +106,9 @@ function Home() {
                     </Row>
                 </Layout>
             </Space>
+            <NoticeDrawer list={notices}
+                          visible={noticeOpened}
+                          handleClose={handleCloseNotice}/>
             <SummonResultModal units={pulledUnits}
                                showDivider={showDivider}
                                dividerSize={10}
