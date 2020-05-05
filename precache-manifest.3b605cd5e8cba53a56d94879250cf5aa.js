@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c0dc103a181004dfa93717916b8ee23",
+    "revision": "293d31e7713b1c12951b3d948de94884",
     "url": "/wotv-gacha-simulator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wotv-gacha-simulator/static/css/2.35fcc229.chunk.css"
   },
   {
-    "revision": "fb65d9f4317263f61439",
+    "revision": "fb5cd938e9d6671ece4d",
     "url": "/wotv-gacha-simulator/static/css/main.3a51f4c5.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wotv-gacha-simulator/static/js/2.eeeec875.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fb65d9f4317263f61439",
-    "url": "/wotv-gacha-simulator/static/js/main.a24934f9.chunk.js"
+    "revision": "fb5cd938e9d6671ece4d",
+    "url": "/wotv-gacha-simulator/static/js/main.369e6d55.chunk.js"
   },
   {
     "revision": "d74e2d229ec69b6dae10",
