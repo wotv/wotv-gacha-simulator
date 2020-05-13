@@ -401,6 +401,12 @@ const ordinaryCardMap = {
         "rank": Rank.UR,
         "imageUrl": "/images/cards/RAMUH.jpg"
     },
+    ODIN: {
+        "key": "ODIN",
+        "name": "차원 절단-오딘",
+        "rank": Rank.UR,
+        "imageUrl": "/images/cards/ODIN.jpg"
+    },
     BEHEMOTH: {
         "key": "BEHEMOTH",
         "name": "난폭한 마수-베히모스",
@@ -436,6 +442,12 @@ const ordinaryCardMap = {
         "name": "찰나의 안식",
         "rank": Rank.MR,
         "imageUrl": "/images/cards/FLEETING_TRANQUILITY.jpg"
+    },
+    GREETINGS_FROM_AFAR: {
+        "key": "GREETINGS_FROM_AFAR",
+        "name": "먼 이국의 땅으로부터",
+        "rank": Rank.MR,
+        "imageUrl": "/images/cards/GREETINGS_FROM_AFAR.jpg"
     },
     IRON_GIANT: {
         "key": "IRON_GIANT",
