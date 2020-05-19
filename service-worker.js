@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/wotv-gacha-simulator/precache-manifest.901077906fcb72f8018c23ea27fa1988.js"
+  "/wotv-gacha-simulator/precache-manifest.11dc4429199758caa9d355d711536b31.js"
 );
 
 self.addEventListener('message', (event) => {
