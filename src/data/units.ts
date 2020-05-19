@@ -14,6 +14,12 @@ export type Unit = {
 }
 
 const ordinaryUnitMap = {
+    MIRANDA: {
+        key: "MIRANDA",
+        name: "미란다",
+        rank: Rank.UR,
+        imageUrl: "/images/units/miranda.jpg"
+    },
     MEDIENA: {
         key: "MEDIENA",
         name: "메디에나",
@@ -91,6 +97,12 @@ const ordinaryUnitMap = {
         name: "키튼",
         rank: Rank.UR,
         imageUrl: "/images/units/kitone.jpg"
+    },
+    DORAND: {
+        key: "DORAND",
+        name: "도랜드",
+        rank: Rank.MR,
+        imageUrl: "/images/units/helena_leonis.jpg"
     },
     HELENA_LEONIS: {
         key: "HELENA_LEONIS",
@@ -335,6 +347,13 @@ export const units = {
 };
 
 const ordinaryCardMap = {
+    LAMIA_QUEEN: {
+        "key": "LAMIA_QUEEN",
+        "name": "라미아 퀸",
+        "rank": Rank.UR,
+        "imageUrl": "/images/cards" +
+            "/LAMIA_QUEEN.jpg"
+    },
     GOLEM: {
         "key": "GOLEM",
         "name": "암벽의 거인-골렘",
@@ -406,6 +425,12 @@ const ordinaryCardMap = {
         "name": "차원 절단-오딘",
         "rank": Rank.UR,
         "imageUrl": "/images/cards/ODIN.jpg"
+    },
+    WHITE_BODYGUARD: {
+        "key": "WHITE_BODYGUARD",
+        "name": "순백의 친위대",
+        "rank": Rank.MR,
+        "imageUrl": "/images/cards/WHITE_BODYGUARD.jpg"
     },
     BEHEMOTH: {
         "key": "BEHEMOTH",
