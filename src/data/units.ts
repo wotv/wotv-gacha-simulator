@@ -347,13 +347,6 @@ export const units = {
 };
 
 const ordinaryCardMap = {
-    LAMIA_QUEEN: {
-        "key": "LAMIA_QUEEN",
-        "name": "라미아 퀸",
-        "rank": Rank.UR,
-        "imageUrl": "/images/cards" +
-            "/LAMIA_QUEEN.jpg"
-    },
     GOLEM: {
         "key": "GOLEM",
         "name": "암벽의 거인-골렘",
@@ -425,6 +418,13 @@ const ordinaryCardMap = {
         "name": "차원 절단-오딘",
         "rank": Rank.UR,
         "imageUrl": "/images/cards/ODIN.jpg"
+    },
+    LAMIA_QUEEN: {
+        "key": "LAMIA_QUEEN",
+        "name": "라미아 퀸",
+        "rank": Rank.MR,
+        "imageUrl": "/images/cards" +
+            "/LAMIA_QUEEN.jpg"
     },
     WHITE_BODYGUARD: {
         "key": "WHITE_BODYGUARD",
